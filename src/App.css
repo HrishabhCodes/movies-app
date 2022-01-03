@@ -1,3 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -34,5 +44,164 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/***************** Navbar *****************/
+
+.navBar {
+  color: rgb(250, 59, 59);
+  display: flex !important;
+  padding: 1rem 2rem !important;
+}
+
+.favorites {
+  font-size: 1.6rem;
+  margin-left: 3rem;
+  margin-top: 0.4rem;
+}
+
+/***************** Banner *****************/
+
+.banner-card {
+  z-index: -1;
+  width: 100vw;
+  margin-top: 1vh;
+  margin-bottom: 3vh;
+  position: relative;
+  height: 70vh;
+  color: white;
+  background-color: black;
+}
+
+.banner-img {
+  height: 70vh;
+  width: 100%;
+  opacity: 0.4;
+}
+
+.banner-title {
+  position: absolute;
+  top: 45vh;
+  left: 5vw;
+}
+
+.banner-text {
+  position: absolute;
+  top: 52vh;
+  left: 5vw;
+  height: 4.5rem;
+  overflow: hidden;
+  margin-right: 5vw;
+}
+
+.trending-header {
+  color: white;
+  margin: 3rem 0;
+}
+
+.trending-header::after {
+  background: none repeat scroll 0 0 rgb(250, 59, 59);
+  bottom: -0.6rem;
+  content: "";
+  display: block;
+  height: 0.3rem;
+  position: relative;
+  margin: auto;
+  width: 7rem;
+}
+
+.movies-card {
+  position: relative;
+  border: 1px solid white;
+  width: 25vw;
+  height: 40vh;
+  background-color: black;
+  color: white;
+  margin: 0.5rem 1rem;
+}
+
+.movies-image {
+  opacity: 0.7;
+  height: 100%;
+}
+
+.movies-cont {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.movies-title {
+  position: absolute;
+  top: 1rem;
+}
+
+.btn-cont {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.movies-btn {
+  border: 0.05rem solid white;
+  font-weight: 500;
+  color: white;
+  position: absolute;
+  bottom: 3rem;
+}
+
+.movies-btn:hover {
+  border: 0.05rem solid rgb(199, 199, 199);
+  background-color: rgb(7, 7, 7);
+  color: white;
+}
+
+.movies-body {
+  padding: 0 1rem;
+}
+
+.page-link {
+  background-color: rgb(17, 17, 17);
+  color: rgb(250, 59, 59);
+  font-weight: 500;
+}
+
+.page-link:hover {
+  background-color: rgb(46, 45, 45);
+  color: rgb(250, 59, 59);
+  font-weight: 500;
+}
+
+.pagination-cont {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 400px) {
+  .banner-card {
+    height: 30vh;
+  }
+  .banner-img {
+    height: 30vh;
+  }
+  .banner-title {
+    top: 12vh;
+    left: 5vw;
+  }
+  .banner-text {
+    top: 17vh;
+    left: 5vw;
+  }
+  .movies-card {
+    width: 40vw;
+    margin: 0.1rem;
+  }
+  .movies-button {
+    width: 80%;
+  }
+  .movies-img {
+    width: 40vw;
   }
 }
