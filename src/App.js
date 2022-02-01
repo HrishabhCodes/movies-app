@@ -3,12 +3,7 @@ import Banner from "./components/Banner";
 import Navbar from "./components/Navbar";
 import Movies from "./components/Movies";
 import Favorites from "./components/Favorites";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (

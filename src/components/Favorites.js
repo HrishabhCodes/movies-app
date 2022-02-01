@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { movies } from "./getmovies";
 
 export default class Favorites extends Component {
   constructor() {
@@ -42,7 +41,7 @@ export default class Favorites extends Component {
     let tempArr = [];
     data.forEach((movieObj) => {
       if (!tempArr.includes(genreIds[movieObj.genre_ids[0]])) {
-        if (genreIds[movieObj.genre_ids[0]] != undefined) {
+        if (genreIds[movieObj.genre_ids[0]] !== undefined) {
           tempArr.push(genreIds[movieObj.genre_ids[0]]);
         }
       }
@@ -62,7 +61,7 @@ export default class Favorites extends Component {
 
   sortPopularity = () => {
     let temp = this.state.movies;
-    if (this.state.sortPop != "desc") {
+    if (this.state.sortPop !== "desc") {
       temp.sort(function (objA, objB) {
         return objB.popularity - objA.popularity;
       });
@@ -84,7 +83,7 @@ export default class Favorites extends Component {
 
   sortRating = () => {
     let temp = this.state.movies;
-    if (this.state.sortRating != "desc") {
+    if (this.state.sortRating !== "desc") {
       temp.sort(function (objA, objB) {
         return objB.vote_average - objA.vote_average;
       });
@@ -112,7 +111,7 @@ export default class Favorites extends Component {
 
   handleDelete = (id) => {
     let newArr = [];
-    newArr = this.state.movies.filter((movie) => movie.id != id);
+    newArr = this.state.movies.filter((movie) => movie.id !== id);
     this.setState({
       movies: [...newArr],
     });
@@ -144,7 +143,7 @@ export default class Favorites extends Component {
 
     let filterArr = [];
 
-    if (this.state.currText != "") {
+    if (this.state.currText !== "") {
       filterArr = this.state.movies.filter((movie) => {
         let title = movie.original_title
           ? movie.original_title.toLowerCase()
@@ -155,9 +154,9 @@ export default class Favorites extends Component {
       filterArr = this.state.movies;
     }
 
-    if (this.state.currGenre != "All Genres") {
+    if (this.state.currGenre !== "All Genres") {
       filterArr = this.state.movies.filter(
-        (movie) => genreIds[movie.genre_ids[0]] == this.state.currGenre
+        (movie) => genreIds[movie.genre_ids[0]] === this.state.currGenre
       );
     }
 
@@ -250,7 +249,6 @@ export default class Favorites extends Component {
                         <tr>
                           <td
                             className="titles"
-                            scope="row"
                             style={{
                               display: "flex",
                               alignItems: "center",
@@ -300,7 +298,7 @@ export default class Favorites extends Component {
                           <li className="page-item">
                             <a
                               className="page-link"
-                              href="#"
+                              href="/"
                               onClick={() => this.handlePageChange(page)}
                               style={{
                                 color: "white",
@@ -314,7 +312,7 @@ export default class Favorites extends Component {
                           <li className="page-item">
                             <a
                               className="page-link"
-                              href="#"
+                              href="/"
                               onClick={() => this.handlePageChange(page)}
                             >
                               {page}

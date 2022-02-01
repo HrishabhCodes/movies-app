@@ -35,7 +35,7 @@ export default class Movies extends Component {
   };
 
   handleClick = (value) => {
-    if (value != this.state.currPage) {
+    if (value !== this.state.currPage) {
       this.setState(
         {
           currPage: value,
@@ -60,7 +60,7 @@ export default class Movies extends Component {
   };
 
   handleLeft = () => {
-    if (this.state.currPage != 1) {
+    if (this.state.currPage !== 1) {
       this.setState(
         {
           currPage: this.state.currPage - 1,
@@ -73,7 +73,7 @@ export default class Movies extends Component {
   handleFavorites = (movie) => {
     let oldData = JSON.parse(localStorage.getItem("movies-app") || "[]");
     if (this.state.favorites.includes(movie.id)) {
-      oldData = oldData.filter((m) => m.id != movie.id);
+      oldData = oldData.filter((m) => m.id !== movie.id);
     } else {
       oldData.push(movie);
     }
@@ -134,8 +134,9 @@ export default class Movies extends Component {
                         {movieObj.overview}
                       </p> */}
                       <div className="btn-cont">
-                        {this.state.hover == movieObj.id && (
+                        {this.state.hover === movieObj.id && (
                           <a
+                            href
                             onClick={() => this.handleFavorites(movieObj)}
                             className="btn btn-dark movies-btn"
                           >
@@ -155,6 +156,7 @@ export default class Movies extends Component {
                 <ul className="pagination">
                   <li className="page-item">
                     <a
+                      href
                       className="page-link"
                       onClick={this.handleLeft}
                       aria-label="Previous"
@@ -166,6 +168,7 @@ export default class Movies extends Component {
                     value === this.state.currPage ? (
                       <li className="page-item">
                         <a
+                          href
                           className="page-link"
                           onClick={() => this.handleClick(value)}
                           style={{
@@ -179,6 +182,7 @@ export default class Movies extends Component {
                     ) : (
                       <li className="page-item">
                         <a
+                          href
                           className="page-link"
                           onClick={() => this.handleClick(value)}
                         >
@@ -189,6 +193,7 @@ export default class Movies extends Component {
                   )}
                   <li className="page-item">
                     <a
+                      href
                       className="page-link"
                       onClick={this.handleRight}
                       aria-label="Next"
